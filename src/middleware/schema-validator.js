@@ -1,5 +1,5 @@
-const s = require("strummer");
-const InvalidSchemaError = require("../errors/invalid-schema-error");
+const s = require('strummer');
+const InvalidSchemaError = require('../errors/invalid-schema-error');
 
 const hasErrors = (object, matcher) => {
   if (matcher) {

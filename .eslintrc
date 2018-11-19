@@ -17,10 +17,14 @@
   },
   "rules": {
     "linebreak-style": ["error", "unix"],
+    "no-console": "error",
     "no-undefined": 2,
     "no-undef": 0,
     "no-unexpected-multiline": 0,
-    "quotes": ["error", "single"],
-    "semi": ["error", "always"]
+    "semi": ["error", "always"],
+    "prefer-const": ["error"],
+    "quotes": ["error", "single", { "allowTemplateLiterals": true, "avoidEscape": true }],
+    "prettier/prettier": ["error", { "singleQuote": true }],
+    "func-names": ["error", "never"]
   }
 }

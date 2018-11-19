@@ -1,7 +1,7 @@
-const _ = require("lodash");
+const _ = require('lodash');
 
 const config = {
-  name: "planet-service",
+  name: 'planet-service',
   port: process.env.PORT || 3001
 };
 
