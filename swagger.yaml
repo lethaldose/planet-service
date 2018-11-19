@@ -1,0 +1,121 @@
+swagger: '2.0'
+info:
+  description: >-
+    Planet Service
+  version: 1.0.0
+  title: Planet Service
+basePath: /
+tags:
+  - name: planet
+    description: 'planet request'
+schemes:
+  - http
+paths:
+  /planets:
+    get:
+      tags:
+        - planets
+      summary: Get planets
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: Get list of all planets.
+          schema:
+            type: object
+            properties:
+              planets:
+                type: array
+                items:
+                  $ref: '#/definitions/planet'
+                description: array of planets
+                example: [{ name: 'mars' }]
+        '500':
+          description: Failed to get planets.
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                description: error while fetching planets
+                example: { message: 'Server error'}
+
+definitions:
+  planet:
+    type: object
+    properties:
+      name:
+        type: string
+        example: mars
+        description: name of planet
+      description:
+        type: string
+        description: best planet
+        example: description for planet
+      price:
+        type: object
+        properties:
+          id:
+            type: string
+            example: "100"
+          currency:
+            type: string
+            example: "AUD"
+        description: price of planet
+      area:
+        type: object
+        properties:
+          value:
+            type: string
+            example: "20000"
+          unit:
+            type: string
+            example: "sq. km"
+        description: area of planet
+      radius:
+        type: object
+        properties:
+          value:
+            type: string
+            example: "100"
+          unit:
+            type: string
+            example: "km"
+        description: radius of planet
+      orbitPeriod:
+        type: object
+        properties:
+          value:
+            type: string
+            example: "213"
+          unit:
+            type: string
+            example: "days"
+        description: days for completing orbit
+      gravity:
+        type: object
+        properties:
+          value:
+            type: string
+            example: "100"
+          unit:
+            type: string
+            example: "m/s2"
+        description: surface gravity
+      temperature:
+        type: object
+        properties:
+          value:
+            type: string
+            example: "30"
+          unit:
+            type: string
+            example: "C"
+        description: surface temperature
+      attributes:
+        type: object
+        description: other planet specific attributes
+        example: { axialTilt: { value: "23.7", unit: "degree" } }
+
