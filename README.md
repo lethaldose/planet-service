@@ -37,7 +37,7 @@ A simple HTTP REST api:
 
 1. Clone the repo
 2. `yarn install` to install node packages
-3. Run `yarn start` to start the app
+3. Run `yarn dev` to start the app
 4. View logs at `tail -f planet-service.log`
 5. Run `yarn test` to run specs
 6. Run `yarn lint` to run es6 linter

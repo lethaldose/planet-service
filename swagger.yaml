@@ -54,6 +54,10 @@ definitions:
         type: string
         example: mars
         description: name of planet
+      imageUrl:
+        type: string
+        example: image url
+        description: planet image
       description:
         type: string
         description: best planet
