@@ -5,14 +5,15 @@ const hasErrors = (object, matcher) => {
   if (matcher) {
     return matcher.match(object);
   }
+  return false;
 };
 
 exports.validate = (schemaOptions = {}) => {
-  let bodyMatcher = schemaOptions.body ? s(schemaOptions.body) : null;
-  let paramsMatcher = schemaOptions.params ? s(schemaOptions.params) : null;
+  const bodyMatcher = schemaOptions.body ? s(schemaOptions.body) : null;
+  const paramsMatcher = schemaOptions.params ? s(schemaOptions.params) : null;
 
   return function(req, res, next) {
-    let errorFields =
+    const errorFields =
       hasErrors(req.params, paramsMatcher) || hasErrors(req.body, bodyMatcher);
 
     if (errorFields.length > 0) {

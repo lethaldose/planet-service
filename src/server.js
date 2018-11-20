@@ -1,14 +1,18 @@
 const bodyParser = require('body-parser');
 const express = require('express');
+const compression = require('compression');
+const cors = require('cors');
 const config = require('./config').get();
 const errorHandler = require('./middleware/error-handler');
-const log = require('./log');
+const { log, morganHttpLogger } = require('./log');
 const routes = require('./routes');
 const metrics = require('./metrics');
-const cors = require('cors');
 
-const start = () => {
+const start = port => {
+  const serverPort = port || config.port;
+
   const app = express();
+  app.use(compression({ threshold: 0 }));
   app.use(
     cors({
       origin: '*',
@@ -18,9 +22,9 @@ const start = () => {
   );
 
   app.use(bodyParser.json({ limit: '200kb' }));
-
-  app.get('/', (req, res) => {
-    res.send({ PlanetService: 'Hello' });
+  app.use(morganHttpLogger());
+  app.get('/planet-service', (req, res) => {
+    res.send({ 'planet-service': 'Hello' });
   });
 
   app.get('/health-check', (req, res) => {
@@ -31,10 +35,10 @@ const start = () => {
     res.send(metrics.get());
   });
 
-  app.use('/', routes);
+  app.use('/planet-service', routes);
   app.use(errorHandler);
-  return app.listen(config.port, () => {
-    log.info(`Planet Service Started:: listening at ${config.port}`);
+  return app.listen(serverPort, () => {
+    log.info(`Planet Service Started:: listening at ${serverPort}`);
   });
 };
 

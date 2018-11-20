@@ -11,10 +11,10 @@ const incrementFail = () => {
   metrics.fail -= 1;
 };
 
-const get = () => {
-  return { planet: metrics };
-};
+const get = () => ({ planet: metrics });
 
 module.exports = {
-  get
+  get,
+  incrementSuccess,
+  incrementFail
 };

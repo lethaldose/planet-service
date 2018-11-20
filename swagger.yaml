@@ -46,6 +46,10 @@ definitions:
   planet:
     type: object
     properties:
+      id:
+        type: integer
+        example: 11
+        description: id of planet
       name:
         type: string
         example: mars
@@ -57,7 +61,7 @@ definitions:
       price:
         type: object
         properties:
-          id:
+          value:
             type: string
             example: "100"
           currency:

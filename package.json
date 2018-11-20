@@ -9,7 +9,7 @@
     "start": "node --use_strict src/start.js",
     "start-dev": "nodemon --use_strict src/start.js",
     "dev": "npm run start-dev",
-    "test": "NODE_ENV=test ./node_modules/.bin/jest --runInBand --forceExit --detectOpenHandles",
+    "test": "NODE_ENV=test ./node_modules/.bin/jest --runInBand --forceExit",
     "watch": "NODE_ENV=test ./node_modules/.bin/jest --watch --runInBand"
   },
   "husky": {
@@ -31,10 +31,12 @@
     "bunyan": "^1.8.12",
     "cors": "^2.8.4",
     "express": "^4.16.2",
+    "compression": "^1.7.3",
     "express-promise-router": "^3.0.1",
     "http-custom-errors": "^8.0.0",
     "http-errors": "^1.6.2",
     "lodash": "^4.17.4",
+    "morgan": "^1.9.1",
     "request": "^2.83.0",
     "request-promise": "^4.2.2",
     "strummer": "^2.4.4"

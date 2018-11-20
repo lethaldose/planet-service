@@ -25,6 +25,7 @@
     "prefer-const": ["error"],
     "quotes": ["error", "single", { "allowTemplateLiterals": true, "avoidEscape": true }],
     "prettier/prettier": ["error", { "singleQuote": true }],
-    "func-names": ["error", "never"]
+    "func-names": ["error", "never"],
+    "import/no-dynamic-require": 0,
   }
 }

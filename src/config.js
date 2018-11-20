@@ -1,15 +1,9 @@
-const _ = require('lodash');
+const env = process.env.NODE_ENV || 'dev';
+const envConfig = require(`./configs/${env}.json`);
 
-const config = {
-  name: 'planet-service',
-  port: process.env.PORT || 3001
-};
+const get = () => envConfig;
 
-const get = () => config;
-
-const validate = () => {
-  return true;
-};
+const validate = () => true;
 
 module.exports = {
   get,

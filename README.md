@@ -7,7 +7,9 @@ A simple HTTP REST api:
 
 ### Environment
 - node v10.13
-- yarn or npm
+- express
+- yarn or npm package manager
+- jest for testing
 
 ### Schema
 - Refer to [swagger](swagger.yaml)

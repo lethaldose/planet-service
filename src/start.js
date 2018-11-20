@@ -1,14 +1,14 @@
 const server = require('./server');
-const log = require('./log');
+const { log } = require('./log');
 const config = require('./config');
 
-process.on('uncaughtException', function(err) {
+process.on('uncaughtException', err => {
   log.error('Uncaught exception, shutting down the server');
   log.error(err);
   process.exit(1);
 });
 
-process.on('unhandledRejection', function(err) {
+process.on('unhandledRejection', err => {
   log.error('UNHANDLED REJECTION', err);
 });
 

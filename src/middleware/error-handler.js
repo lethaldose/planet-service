@@ -1,4 +1,4 @@
-const log = require('../log');
+const { log } = require('../log');
 
 module.exports = (err, req, res, next) => {
   if (!err) {
