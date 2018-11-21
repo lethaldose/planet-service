@@ -68,7 +68,7 @@ definitions:
           value:
             type: string
             example: "100"
-          currency:
+          unit:
             type: string
             example: "AUD"
         description: price of planet

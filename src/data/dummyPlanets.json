@@ -9,7 +9,7 @@
   },
   "price" :{
     "value": "1000.12",
-    "currency": "AUD"
+    "unit": "AUD"
   },
   "radius": {
     "value": "12310",
@@ -42,7 +42,7 @@
   },
   "price" :{
     "value": "1230.12",
-    "currency": "AUD"
+    "unit": "AUD"
   },
   "radius": {
     "value": "6510",
