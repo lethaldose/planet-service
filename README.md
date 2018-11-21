@@ -11,7 +11,7 @@ A simple HTTP REST api:
 - yarn or npm package manager
 - jest for testing
 
-### Schema
+### Request Schema
 - Refer to [swagger](swagger.yaml)
 
 ### Routes
@@ -49,5 +49,7 @@ A simple HTTP REST api:
 ### Sample Request
 
 ```
-
+curl -X GET \
+  http://localhost:3002/planet-service/planets \
+  -H 'cache-control: no-cache'
 ```
